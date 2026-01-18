@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      max-width: 320px;
+    }
+
+    h1 {
+      color: #ff69b4;
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+    }
+
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #ff85c1;
+    }
+
+    .heart {
+      font-size: 30px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🎂 Happy Birthday! 🎉</h1>
+    <p>You make my days brighter 🌸</p>
+    <button onclick="showLove()">Click me 💝</button>
+    <p id="secret"></p>
+    <div class="heart">❤️</div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("secret").innerHTML =
+        "I’m so lucky to have you 💖 Have the cutest birthday ever 🥰";
+    }
+  </script>
+
+</body>
+</html>
