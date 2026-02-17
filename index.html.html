@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Sruthi ✨</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffafcc,#cdb4db,#ffc8dd);
+background-attachment:fixed;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* SLIDES */
+.slide{
+display:none;
+min-height:100vh;
+padding:30px 20px;
+box-sizing:border-box;
+}
+
+.active{
+display:block;
+animation:fade 0.8s ease;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* TITLE */
+.title{
+font-family:'Playfair Display',serif;
+font-size:42px;
+margin-top:30px;
+}
+
+/* RESPONSIVE BIGGER ON DESKTOP */
+@media(min-width:768px){
+.title{font-size:70px;}
+}
+
+/* BOX */
+.box{
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+padding:25px;
+margin:20px auto;
+width:95%;
+max-width:700px;
+border-radius:25px;
+font-size:18px;
+font-weight:600;
+box-shadow:0 0 20px rgba(255,255,255,0.4);
+display:none;
+}
+
+@media(min-width:768px){
+.box{font-size:26px;}
+}
+
+/* BUTTON */
+button{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff4d6d,#9d4edd);
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+/* LIGHT PETALS (LESS = NO LAG) */
+.petal{
+position:fixed;
+top:-10px;
+font-size:18px;
+animation:fall linear infinite;
+opacity:0.7;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+/* CAKE */
+.cake{
+font-size:120px;
+margin-top:20px;
+}
+
+@media(min-width:768px){
+.cake{font-size:220px;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid">
+</audio>
+
+<!-- LIGHT PETALS SCRIPT (ONLY 12 FOR PERFORMANCE) -->
+<script>
+for(let i=0;i<12;i++){
+let petal=document.createElement("div");
+petal.innerHTML="🌸";
+petal.className="petal";
+petal.style.left=Math.random()*100+"%";
+petal.style.animationDuration=(6+Math.random()*5)+"s";
+document.body.appendChild(petal);
+}
+</script>
+
+<!-- SLIDE 1 -->
+<div class="slide active" id="slide1">
+
+<h1 class="title">Happy Birthday Sruthi ✨</h1>
+<p style="font-size:18px;">A beautiful day to celebrate you 🌸</p>
+
+<button onclick="flowerBurst();nextSlide(2)">Begin 🌷</button>
+
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="slide2">
+
+<h1 class="title">Messages From The Heart 💌</h1>
+
+<button onclick="showBox('m1')">Open 💖</button>
+<div class="box" id="m1">You are not just special… you are once in a lifetime 🌸✨</div>
+
+<button onclick="showBox('m2')">Open 🌸</button>
+<div class="box" id="m2">May your life be as bright as your smile and as beautiful as your heart 💕</div>
+
+<button onclick="showBox('m3')">Open 🎀</button>
+<div class="box" id="m3">The world became a better place the day you were born 🎉💖</div>
+
+<button onclick="flowerBurst();nextSlide(3)">Next 🌷</button>
+
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="slide3">
+
+<h1 class="title">Special Wishes 🌸</h1>
+
+<div class="box" style="display:block;">May happiness hug you tightly every single day 💞</div>
+<div class="box" style="display:block;">Success, love, peace and endless laughter are waiting for you 🌟</div>
+<div class="box" style="display:block;">Never forget how amazing and strong you are 💖</div>
+<div class="box" style="display:block;">🌸 From my side: Sruthi, may this year surprise you with miracles, beautiful memories and dreams that finally come true. Keep shining always ✨💜</div>
+
+<button onclick="flowerBurst();nextSlide(4)">Final 🌼</button>
+
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide" id="slide4">
+
+<h1 class="title">Happy Birthday ✨</h1>
+
+<div class="cake">🎂</div>
+
+<div class="box" style="display:block;">May this cake bring sweetness to your life all year long 🍰💖</div>
+<div class="box" style="display:block;">Stay blessed, stay happy, stay YOU 🌸✨</div>
+
+<button onclick="nextSlide(1)">Start Again 💗</button>
+
+</div>
+
+<script>
+function nextSlide(n){
+let slides=document.getElementsByClassName("slide");
+for(let i=0;i<slides.length;i++){
+slides[i].classList.remove("active");
+}
+document.getElementById("slide"+n).classList.add("active");
+}
+
+function showBox(id){
+document.getElementById(id).style.display="block";
+}
+
+/* LIGHT FLOWER BURST (LOW LAG) */
+function flowerBurst(){
+for(let i=0;i<20;i++){
+let flower=document.createElement("div");
+flower.innerHTML="🌸";
+flower.style.position="fixed";
+flower.style.left="50%";
+flower.style.top="50%";
+flower.style.fontSize="20px";
+flower.style.transition="all 0.8s ease-out";
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+flower.style.left=Math.random()*100+"%";
+flower.style.top=Math.random()*100+"%";
+flower.style.opacity="0";
+},10);
+
+setTimeout(()=>flower.remove(),800);
+}
+}
+</script>
+
+</body>
+</html>
