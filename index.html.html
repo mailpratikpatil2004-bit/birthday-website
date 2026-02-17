@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Sruthi ✨</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffafcc,#cdb4db,#ffc8dd);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* LIGHT DECORATION CHAIN */
+.lights{
+font-size:20px;
+padding:10px;
+}
+
+/* SLIDES */
+.slide{
+display:none;
+min-height:100vh;
+padding:25px 15px;
+}
+
+.active{
+display:block;
+animation:fade 0.7s ease;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* TITLE */
+.title{
+font-family:'Playfair Display',serif;
+font-size:38px;
+}
+
+@media(min-width:768px){
+.title{font-size:65px;}
+}
+
+/* BOX */
+.box{
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+padding:20px;
+margin:20px auto;
+width:95%;
+max-width:700px;
+border-radius:20px;
+font-size:18px;
+font-weight:600;
+box-shadow:0 0 15px rgba(255,255,255,0.4);
+}
+
+/* BUTTON */
+button{
+padding:12px 25px;
+font-size:16px;
+border:none;
+border-radius:25px;
+background:linear-gradient(45deg,#ff4d6d,#9d4edd);
+color:white;
+cursor:pointer;
+margin-top:15px;
+}
+
+/* FLOWERS */
+.petal{
+position:fixed;
+top:-10px;
+font-size:18px;
+animation:fall linear infinite;
+opacity:0.8;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh);}
+}
+
+/* PHOTO FRAME */
+.frame{
+background:white;
+padding:10px;
+border-radius:20px;
+width:85%;
+max-width:300px;
+margin:20px auto;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.frame img{
+width:100%;
+border-radius:15px;
+}
+
+.caption{
+color:#6a0572;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* CAKE */
+.cake{
+font-size:130px;
+margin-top:20px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="lights">💡🌸💡🌸💡🌸💡🌸💡🌸💡</div>
+
+<!-- PETALS -->
+<script>
+for(let i=0;i<15;i++){
+let petal=document.createElement("div");
+petal.innerHTML="🌸";
+petal.className="petal";
+petal.style.left=Math.random()*100+"%";
+petal.style.animationDuration=(6+Math.random()*4)+"s";
+document.body.appendChild(petal);
+}
+</script>
+
+<!-- SLIDE 1 -->
+<div class="slide active" id="slide1">
+<h1 class="title">Happy Birthday Sruthi ✨</h1>
+
+<div class="box">
+Today is not just a date… it’s a celebration of your kindness, your smile, and the beautiful soul you are 🌸
+</div>
+
+<div class="box">
+May this new year of your life bring confidence, peace, success and endless happiness 💖
+</div>
+
+<button onclick="nextSlide(2)">Next 🌷</button>
+</div>
+
+<!-- SLIDE 2 (PUZZLE GAME) -->
+<div class="slide" id="slide2">
+<h1 class="title">Little Puzzle 🎀</h1>
+
+<div class="box">
+What is Sruthi's special day? <br><br>
+Type the word: <b>birthday</b>
+</div>
+
+<input type="text" id="answer" placeholder="Type answer here" style="padding:8px;border-radius:10px;border:none;">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<p id="result"></p>
+</div>
+
+<!-- SLIDE 3 (MESSAGES CHANGED) -->
+<div class="slide" id="slide3">
+<h1 class="title">Messages From The Heart 💌</h1>
+
+<div class="box">
+You deserve love that makes you feel safe and dreams that make you excited for tomorrow 💕
+</div>
+
+<div class="box">
+May your laughter echo louder this year and your worries grow smaller 🌸
+</div>
+
+<div class="box">
+Keep being real, kind and strong — that’s your real magic ✨
+</div>
+
+<button onclick="nextSlide(4)">Next 🌼</button>
+</div>
+
+<!-- SLIDE 4 (PHOTO GALLERY) -->
+<div class="slide" id="slide4">
+<h1 class="title">Beautiful Memories 📸</h1>
+
+<div class="frame">
+<img src="photo1.jpg">
+<div class="caption">This smile lights up everything around you 🌸</div>
+</div>
+
+<div class="frame">
+<img src="photo2.jpg">
+<div class="caption">A moment full of happiness and pure joy 💖</div>
+</div>
+
+<div class="frame">
+<img src="photo3.jpg">
+<div class="caption">Stay confident and keep shining like this ✨</div>
+</div>
+
+<button onclick="nextSlide(5)">Final 🌷</button>
+</div>
+
+<!-- SLIDE 5 (FINAL BIG MESSAGE) -->
+<div class="slide" id="slide5">
+<h1 class="title">Happy Birthday Once Again ✨</h1>
+
+<div class="cake">🎂</div>
+
+<div class="box">
+On this special day, I wish you a life filled with peaceful mornings, exciting adventures, genuine friendships, and endless reasons to smile.
+May every goal you chase come closer, and every dream you hold become reality.
+Never doubt how amazing you truly are.
+</div>
+
+<div class="box">
+May your path be filled with success, your heart filled with love, and your days filled with happiness.
+Stay blessed, stay positive, and keep shining always 🌸💖
+</div>
+
+<button onclick="nextSlide(1)">Start Again 💗</button>
+</div>
+
+<script>
+function nextSlide(n){
+let slides=document.getElementsByClassName("slide");
+for(let i=0;i<slides.length;i++){
+slides[i].classList.remove("active");
+}
+document.getElementById("slide"+n).classList.add("active");
+}
+
+function checkAnswer(){
+let ans=document.getElementById("answer").value.toLowerCase();
+if(ans==="birthday"){
+document.getElementById("result").innerHTML="Correct! 🎉";
+setTimeout(()=>nextSlide(3),800);
+}else{
+document.getElementById("result").innerHTML="Try again 🌸";
+}
+}
+</script>
+
+</body>
+</html>
